@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auksjon</title>
+    <script type="module" src="/src/app.js"></script>
+  </head>
+
+  <body class="bg-black">
+    <header class="flex items-center justify-between p-4 px-64 text-white">
+      <a href="/" class="flex items-center">
+        <img src="/public/images/logo.svg" alt="Noroff Logo" class="h-10" />
+      </a>
+
+      <div class="absolute left-1/2 transform -translate-x-1/2">
+        <nav class="flex space-x-4">
+          <a
+            href="/"
+            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
+            >Listings</a
+          >
+          <a
+            href="/listing/create/"
+            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
+            >Create Listing</a
+          >
+          <a
+            href="#"
+            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
+            >My Bids</a
+          >
+          <a href="/profile/" class="hover:text-[#FFD700] font-medium"
+            >My Listings</a
+          >
+        </nav>
+      </div>
+
+      <div id="user-actions" class="flex items-center space-x-4"></div>
+    </header>
+    <main class="bg-black text-white p-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+        <section class="col-span-3">
+          <div class="mb-6">
+            <div
+              class="flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <h2 class="text-lg mb-4 md:mb-0">Current Listings</h2>
+            </div>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/images/placeholderimage2.jfif"
+                alt="Antique Clock"
+                class="rounded-lg w-full"
+              />
+              <div class="mt-2 text-left">
+                <h4 class="font-bold">Antique Clock</h4>
+                <p
+                  class="text-[#E4E2D7] flex items-center justify-left space-x-1"
+                >
+                  <img
+                    src="public/images/creditsIcon.svg"
+                    alt="coin icon"
+                    class="h-4 w-4"
+                  />
+                  <span>120</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="mt-8 flex justify-center space-x-2">
+            <button
+              class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500"
+            >
+              1
+            </button>
+            <button
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            >
+              2
+            </button>
+            <button
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            >
+              3
+            </button>
+            <button
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            >
+              4
+            </button>
+            <button
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            >
+              5
+            </button>
+          </div>
+        </section>
+
+        <!-- Filters Section -->
+        <aside class="col-span-1 mt-12">
+          <h3 class="font-medium text-lg mb-4">Categories</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Antiques</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Collectibles</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Furniture</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Jewellery</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Art</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Decor</span>
+              </label>
+            </li>
+          </ul>
+
+          <div class="mt-6">
+            <div class="flex justify-between">
+              <h3 class="font-medium text-lg">Available Credits</h3>
+              <h3 class="font-medium text-lg">In Escrow</h3>
+            </div>
+            <div class="text-gray-400 flex justify-between">
+              <span class="flex items-center space-x-1">
+                <img
+                  src="public/images/creditsIcon.svg"
+                  alt="Coin Icon"
+                  class="h-4 w-4"
+                />
+                <span>9500</span>
+              </span>
+              <span class="flex items-center space-x-1">
+                <img
+                  src="public/images/creditsIcon.svg"
+                  alt="Coin Icon"
+                  class="h-4 w-4"
+                />
+                <span>500</span>
+              </span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="bg-black text-white p-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2">
+            <img
+              src="/public/images/logo.svg"
+              alt="AuctionHouse Logo"
+              class="h-8"
+            />
+          </div>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="/public/images/facebook.svg"
+                alt="Facebook Icon"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="/public/images/instagram.svg"
+                alt="Instagram Icon"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="/public/images/twitter.svg"
+                alt="Twitter Icon"
+                class="h-6 w-6"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">About</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">About Us</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Company Info</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Safety Tips</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
+          <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Email address"
+              class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-yellow-400 text-black px-4 py-2 rounded-r-md hover:bg-yellow-500"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

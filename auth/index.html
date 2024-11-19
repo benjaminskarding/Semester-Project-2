@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <script type="module" src="/src/app.js"></script>
+  </head>
+  <body class="bg-black font-sans text-gray-800">
+    <div
+      class="flex flex-col items-center justify-center min-h-screen p-6 bg-black rounded-lg shadow-lg max-w-md mx-auto space-y-8"
+    >
+      <a href="/" class="flex items-center">
+        <img src="/public/images/logo.svg" alt="Noroff Logo" class="h-10" />
+      </a>
+
+      <div class="loginContainer flex space-x-4 font-semibold text-white">
+        <a href="/auth/login/" class="hover:underline">Login</a>
+        <a href="/auth/register/" class="hover:underline">Register</a>
+      </div>
+
+      <button
+        id="logoutBtn"
+        class="bg-red-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200"
+      >
+        Logout
+      </button>
+    </div>
+  </body>
+</html>

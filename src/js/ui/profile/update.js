@@ -88,9 +88,7 @@ export async function renderUserListings() {
     listings.forEach((listing) => {
       const { id, title, description, media, endsAt } = listing;
       const mediaUrl =
-        media.length > 0
-          ? media[0].url
-          : '/public/images/placeholderimage2.jfif';
+        media.length > 0 ? media[0].url : '/images/placeholderimage2.jfif';
       const formattedEndsAt = new Date(endsAt).toLocaleDateString();
 
       const listingHTML = `

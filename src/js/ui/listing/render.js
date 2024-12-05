@@ -115,7 +115,7 @@ export async function renderSingleListingPage() {
   }
 
   imageElement.src =
-    listing.data.media?.[0]?.url || '/public/images/placeholderimage2.jfif';
+    listing.data.media?.[0]?.url || '/images/placeholderimage2.jfif';
   imageElement.alt = listing.data.title || 'Listing Image';
   imageElement.onerror = () => {
     imageElement.src = fallbackImage;

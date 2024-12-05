@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Auksjon</title>
+    <script type="module" crossorigin src="/assets/auth-C6JRnMo6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/auth-DteFRpTk.css" />
+  </head>
+
+  <body class="bg-black">
+    <header class="flex items-center justify-between p-4 px-64 text-white">
+      <a href="/" class="flex items-center">
+        <img src="/assets/logo-Bn3vOdp2.svg" alt="Noroff Logo" class="h-10" />
+      </a>
+
+      <div class="absolute left-1/2 transform -translate-x-1/2">
+        <nav class="flex space-x-4"></nav>
+      </div>
+
+      <div id="user-actions" class="flex items-center space-x-4"></div>
+    </header>
+    <main class="bg-black text-white p-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+        <section class="col-span-3">
+          <h2 class="text-lg font-medium mb-6">Current Listings</h2>
+          <div id="listings-container" class="grid grid-cols-4 gap-8"></div>
+
+          <div id="pagination" class="mt-8 flex justify-center space-x-2"></div>
+        </section>
+
+        <aside class="col-span-1 mt-12">
+          <h3 class="font-normal text-lg mb-4">Categories</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Antiques</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Collectibles</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Furniture</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Jewellery</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Art</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
+                />
+                <span>Decor</span>
+              </label>
+            </li>
+          </ul>
+
+          <div class="credits-section mt-6" id="credits-section">
+            <div class="flex justify-between">
+              <h3 class="font-normal text-lg">Available Credits</h3>
+            </div>
+            <div class="text-gray-400 flex justify-between">
+              <span class="flex items-center space-x-1">
+                <img
+                  src="data:image/svg+xml,%3csvg%20width='11'%20height='12'%20viewBox='0%200%2011%2012'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M2.30941%202.80437C2.65041%202.46337%203.29782%202.33282%204.21848%202.60361C4.28339%202.6227%204.34901%202.64364%204.41525%202.66643C3.99781%202.96271%203.5888%203.30748%203.20066%203.69562C3.05058%203.8457%202.90722%203.99865%202.77082%204.15375C2.58275%204.36758%202.60364%204.69339%202.81748%204.88146C3.03131%205.06952%203.35712%205.04863%203.54519%204.8348C3.66702%204.69628%203.79531%204.55938%203.92987%204.42482C4.43938%203.91531%204.97885%203.49902%205.50981%203.18281C6.04077%203.49902%206.58024%203.91531%207.08975%204.42482C7.66792%205.003%208.12606%205.61975%208.45414%206.21887C8.46419%206.24112%208.47584%206.2627%208.48902%206.28342C8.67451%206.63133%208.81582%206.97258%208.91097%207.29609C9.18175%208.21676%209.0512%208.86416%208.7102%209.20516C8.3692%209.54616%207.7218%209.67671%206.80113%209.40593C6.73623%209.38684%206.67061%209.36589%206.60436%209.3431C7.02181%209.04682%207.43081%208.70205%207.81895%208.31391C7.96252%208.17034%208.09994%208.02415%208.231%207.87597C8.41966%207.66266%208.39968%207.33679%208.18637%207.14813C7.97306%206.95947%207.64719%206.97945%207.45853%207.19276C7.34145%207.32513%207.21847%207.45599%207.08975%207.58471C6.58024%208.09422%206.04077%208.51052%205.50981%208.82673C4.97885%208.51052%204.43938%208.09422%203.92987%207.58471C2.9944%206.64924%202.37316%205.6128%202.10865%204.71344C1.83786%203.79278%201.96841%203.14537%202.30941%202.80437ZM4.50947%201.61426C4.83724%201.71067%205.17279%201.84329%205.50981%202.00954C5.84683%201.84329%206.18237%201.71067%206.51015%201.61426C7.58355%201.29856%208.70646%201.34223%209.43941%202.07517C9.94099%202.57675%2010.1199%203.2698%2010.0821%203.98737C10.0485%204.6267%209.84346%205.31865%209.50502%206.00475C9.67128%206.34177%209.80391%206.67732%209.90031%207.00511C10.216%208.07851%2010.1723%209.20142%209.43941%209.93437C8.70646%2010.6673%207.58355%2010.711%206.51015%2010.3953C6.18237%2010.2989%205.84683%2010.1662%205.50981%209.99999C5.17279%2010.1662%204.83724%2010.2989%204.50947%2010.3953C3.43607%2010.711%202.31315%2010.6673%201.58021%209.93437C1.07898%209.43313%200.899955%208.74069%200.937411%208.02365C0.970831%207.38388%201.17591%206.69139%201.51459%206.00479C1.34834%205.66776%201.21571%205.33221%201.1193%205.00443C0.803597%203.93103%200.847268%202.80811%201.58021%202.07517C2.31315%201.34223%203.43607%201.29856%204.50947%201.61426ZM7.81895%203.69562C7.43081%203.30748%207.02181%202.96271%206.60436%202.66643C6.67061%202.64364%206.73623%202.6227%206.80113%202.60361C7.7218%202.33282%208.3692%202.46337%208.7102%202.80437C8.9454%203.03957%209.07979%203.41105%209.0523%203.93316C9.03676%204.22836%208.96921%204.55826%208.84814%204.91022C8.55186%204.49277%208.20709%204.08376%207.81895%203.69562ZM3.20066%208.31391C3.5888%208.70205%203.99781%209.04682%204.41525%209.3431C4.34901%209.36589%204.28339%209.38684%204.21848%209.40593C3.29782%209.67671%202.65041%209.54616%202.30941%209.20516C2.07438%208.97013%201.94001%208.59899%201.96726%208.07745C1.98269%207.78198%202.05026%207.45171%202.17147%207.09932C2.46775%207.51676%202.81252%207.92577%203.20066%208.31391ZM6.53131%205.99521C6.53131%206.56475%206.0696%207.02646%205.50006%207.02646C4.93052%207.02646%204.46881%206.56475%204.46881%205.99521C4.46881%205.42566%204.93052%204.96396%205.50006%204.96396C6.0696%204.96396%206.53131%205.42566%206.53131%205.99521Z'%20fill='%23FFD700'/%3e%3c/svg%3e"
+                  alt="Coin Icon"
+                  class="h-4 w-4"
+                />
+                <span id="availableCredits"></span>
+              </span>
+            </div>
+          </div>
+          <div class="search-field mt-6">
+            <input
+              type="text"
+              placeholder="Search listings..."
+              class="w-full p-2 rounded-md bg-white text-black placeholder-gray-400 focus:outline-none"
+            />
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="bg-black text-white p-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2">
+            <img
+              src="/assets/logo-Bn3vOdp2.svg"
+              alt="AuctionHouse Logo"
+              class="h-8"
+            />
+          </div>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.626%203.6106H3.37598C2.96113%203.6106%202.62598%203.94575%202.62598%204.3606V21.6106C2.62598%2022.0254%202.96113%2022.3606%203.37598%2022.3606H20.626C21.0408%2022.3606%2021.376%2022.0254%2021.376%2021.6106V4.3606C21.376%203.94575%2021.0408%203.6106%2020.626%203.6106ZM18.4604%209.08325H16.9627C15.7885%209.08325%2015.5611%209.64106%2015.5611%2010.4614V12.2684H18.3643L17.9986%2015.0973H15.5611V22.3606H12.6385V15.0997H10.1939V12.2684H12.6385V10.1825C12.6385%207.76138%2014.1174%206.44185%2016.2783%206.44185C17.3143%206.44185%2018.2025%206.51919%2018.4627%206.55435V9.08325H18.4604Z'%20fill='%23EBD5D1'%20fill-opacity='0.62'/%3e%3c/svg%3e"
+                alt="Facebook Icon"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12.0003%207.4882C8.96009%207.4882%206.50652%209.94177%206.50652%2012.9819C6.50652%2016.0221%208.96009%2018.4757%2012.0003%2018.4757C15.0404%2018.4757%2017.494%2016.0221%2017.494%2012.9819C17.494%209.94177%2015.0404%207.4882%2012.0003%207.4882ZM12.0003%2016.5525C10.0342%2016.5525%208.42973%2014.948%208.42973%2012.9819C8.42973%2011.0159%2010.0342%209.41141%2012.0003%209.41141C13.9663%209.41141%2015.5708%2011.0159%2015.5708%2012.9819C15.5708%2014.948%2013.9663%2016.5525%2012.0003%2016.5525ZM17.719%205.98284C17.0092%205.98284%2016.436%206.55606%2016.436%207.26588C16.436%207.9757%2017.0092%208.54891%2017.719%208.54891C18.4288%208.54891%2019.0021%207.97838%2019.0021%207.26588C19.0023%207.09733%2018.9692%206.93039%2018.9048%206.77463C18.8404%206.61887%2018.7459%206.47735%2018.6267%206.35816C18.5076%206.23898%2018.366%206.14448%2018.2103%206.08008C18.0545%206.01567%2017.8876%205.98263%2017.719%205.98284ZM22.7092%2012.9819C22.7092%2011.5034%2022.7226%2010.0382%2022.6396%208.56231C22.5565%206.84802%2022.1654%205.32659%2020.9119%204.07302C19.6556%202.81677%2018.1369%202.42838%2016.4226%202.34534C14.944%202.26231%2013.4788%202.2757%2012.0029%202.2757C10.5244%202.2757%209.0592%202.26231%207.5833%202.34534C5.86902%202.42838%204.34759%202.81945%203.09402%204.07302C1.83777%205.32927%201.44937%206.84802%201.36634%208.56231C1.2833%2010.0409%201.2967%2011.5061%201.2967%2012.9819C1.2967%2014.4578%201.2833%2015.9257%201.36634%2017.4016C1.44937%2019.1159%201.84045%2020.6373%203.09402%2021.8909C4.35027%2023.1471%205.86902%2023.5355%207.5833%2023.6186C9.06187%2023.7016%2010.5271%2023.6882%2012.0029%2023.6882C13.4815%2023.6882%2014.9467%2023.7016%2016.4226%2023.6186C18.1369%2023.5355%2019.6583%2023.1444%2020.9119%2021.8909C22.1681%2020.6346%2022.5565%2019.1159%2022.6396%2017.4016C22.7253%2015.9257%2022.7092%2014.4605%2022.7092%2012.9819ZM20.3521%2019.298C20.1565%2019.7855%2019.9208%2020.1498%2019.5431%2020.5248C19.1654%2020.9025%2018.8038%2021.1382%2018.3163%2021.3337C16.9074%2021.8936%2013.5619%2021.7677%2012.0003%2021.7677C10.4387%2021.7677%207.09045%2021.8936%205.68152%2021.3364C5.19402%2021.1409%204.82973%2020.9052%204.45473%2020.5275C4.07705%2020.1498%203.84134%2019.7882%203.6458%2019.3007C3.08866%2017.8891%203.21455%2014.5436%203.21455%2012.9819C3.21455%2011.4203%203.08866%208.07213%203.6458%206.6632C3.84134%206.1757%204.07705%205.81141%204.45473%205.43641C4.83241%205.06141%205.19402%204.82302%205.68152%204.62749C7.09045%204.07034%2010.4387%204.19623%2012.0003%204.19623C13.5619%204.19623%2016.9101%204.07034%2018.319%204.62749C18.8065%204.82302%2019.1708%205.05873%2019.5458%205.43641C19.9235%205.81409%2020.1592%206.1757%2020.3547%206.6632C20.9119%208.07213%2020.786%2011.4203%2020.786%2012.9819C20.786%2014.5436%2020.9119%2017.8891%2020.3521%2019.298Z'%20fill='%23EBD5D1'%20fill-opacity='0.62'/%3e%3c/svg%3e"
+                alt="Instagram Icon"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="#" class="hover:text-yellow-400">
+              <img
+                src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.6763%2011.6445L20.2294%204.18506H18.677L12.9846%2010.6607L8.44148%204.18506H3.2002L10.0718%2013.9783L3.2002%2021.7997H4.75252L10.76%2014.9598L15.5589%2021.7997H20.8002M5.31278%205.33141H7.69758L18.6759%2020.7097H16.2905'%20fill='%23EBD5D1'%20fill-opacity='0.62'/%3e%3c/svg%3e"
+                alt="Twitter Icon"
+                class="h-6 w-6"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">About</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">About Us</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Company Info</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-4">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Safety Tips</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
+          <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Email address"
+              class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

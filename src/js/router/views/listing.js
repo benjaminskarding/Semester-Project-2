@@ -3,40 +3,32 @@ import { renderSingleListingPage } from '../../ui/listing/render';
 import { displayCredits } from '../../utilities/displayCredits';
 import { setupBidButton } from '../../ui/listing/bid';
 import { isLoggedIn } from '../../utilities/authGuard';
+import { getListingIdFromPage } from '../../utilities/getListingIdFromPage';
 
-displayCredits();
-conditionallyUpdateUI();
-renderSingleListingPage();
-conditionallyUpdateListingPageUI();
+function initializeListingPage() {
+  displayCredits();
+  conditionallyUpdateUI();
+  renderSingleListingPage();
+  conditionallyUpdateListingUI();
 
-function getListingIdFromPage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('id');
+  const listingId = getListingIdFromPage();
+  const currentBid = getCurrentBidFromPage();
+  setupBidButton(listingId, currentBid);
 }
 
-function conditionallyUpdateListingPageUI() {
+function conditionallyUpdateListingUI() {
   const bidButton = document.getElementById('bidButton');
   const creditsSection = document.getElementById('creditsBlock');
 
   if (!isLoggedIn()) {
-    if (bidButton) {
-      bidButton.style.display = 'none';
-    }
-
-    if (creditsSection) {
-      creditsSection.style.display = 'none';
-    }
+    bidButton?.style.setProperty('display', 'none');
+    creditsSection?.style.setProperty('display', 'none');
   }
 }
 
 function getCurrentBidFromPage() {
   const currentBidElement = document.getElementById('currentBid');
-  return currentBidElement
-    ? parseFloat(currentBidElement.textContent.trim()) || 0
-    : 0;
+  return parseFloat(currentBidElement?.textContent?.trim()) || 0;
 }
 
-const listingId = getListingIdFromPage();
-const currentBid = getCurrentBidFromPage();
-
-setupBidButton(listingId, currentBid);
+initializeListingPage();

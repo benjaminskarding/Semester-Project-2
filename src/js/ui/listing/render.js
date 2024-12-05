@@ -1,4 +1,4 @@
-import { getUrlParam } from '../../utilities/geturlparam';
+import { getUrlParam } from '../../utilities/getUrlParam';
 import { fetchListingById } from '../../api/listing/fetch';
 import { startCountdown } from '../../utilities/countdown';
 

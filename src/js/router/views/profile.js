@@ -1,10 +1,11 @@
 import { conditionallyUpdateUI } from '../../utilities/conditionallyDisplay';
-import { fetchProfile, renderUserListings } from '../../api/profile/profile';
+import { fetchProfile } from '../../api/profile/profile';
 import {
   renderProfile,
   setupProfilePictureUpdate,
 } from '../../ui/profile/update';
 import { displayCredits } from '../../utilities/displayCredits';
+import { renderUserListings } from '../../ui/profile/update';
 
 export default async function profileView() {
   const username = localStorage.getItem('username');

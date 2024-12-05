@@ -1,7 +1,7 @@
 function o(){localStorage.removeItem("accessToken"),localStorage.removeItem("name"),window.location.href="/auth/"}function r(){return localStorage.getItem("accessToken")?!0:(alert("You must be logged in to view this page."),window.location.href="/auth/",!1)}function n(){return localStorage.getItem("accessToken")!==null}function a(){const e=localStorage.getItem("accessToken"),t=localStorage.getItem("username");return!e||!t?null:{username:t,accessToken:e}}function s(){const e=document.getElementById("user-actions"),t=document.querySelector("header nav");if(!e||!t){console.error('Element with id "user-actions" not found in the DOM.');return}e.innerHTML="",n()?(e.innerHTML=`
       <button id="logoutButton" class="font-normal">Logout</button>
       <a href="/profile/" class="flex items-center">
-        <img src="/public/images/user.svg" alt="Profile" class="h-6 w-6" />
+        <img src="/images/user.svg" alt="Profile" class="h-6 w-6" />
       </a>
     `,document.getElementById("logoutButton").addEventListener("click",o),t.innerHTML=`
       <a

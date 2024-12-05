@@ -71,7 +71,7 @@ export async function fetchUserListings(username) {
 
 export async function fetchFilteredListings(query) {
   try {
-    const url = `${API_AUCTION_LISTINGS}/search?q=${encodeURIComponent(query)}`;
+    const url = `${API_AUCTION_LISTINGS}/search?q=${encodeURIComponent(query)}&_bids=true`;
     const response = await fetch(url, {
       method: 'GET',
       headers: publicHeaders(),

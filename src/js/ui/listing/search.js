@@ -6,7 +6,6 @@ export function setupSearch() {
   const creditsSection = document.getElementById('credits-section');
   const searchField = document.querySelector('.search-field');
   const aside = document.querySelector('aside');
-  const categories = aside.querySelector('ul');
 
   if (isLoggedIn()) {
     creditsSection.style.display = 'block';
@@ -16,7 +15,10 @@ export function setupSearch() {
     );
   } else {
     creditsSection.style.display = 'none';
-    categories.parentNode.insertBefore(searchField, categories.nextSibling);
+
+    aside.insertBefore(searchField, aside.firstChild);
+    searchField.classList.remove('mt-6');
+    searchField.classList.add('mt-0');
   }
 
   const searchInput = searchField.querySelector('input');

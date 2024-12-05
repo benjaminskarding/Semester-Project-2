@@ -16,7 +16,7 @@ export function conditionallyUpdateUI() {
     userActions.innerHTML = `
       <button id="logoutButton" class="font-normal">Logout</button>
       <a href="/profile/" class="flex items-center">
-        <img src="public/images/user.svg" alt="Profile" class="h-6 w-6" />
+        <img src="/images/user.svg" alt="Profile" class="h-6 w-6" />
       </a>
     `;
 

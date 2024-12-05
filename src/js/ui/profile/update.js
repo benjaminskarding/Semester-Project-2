@@ -1,5 +1,6 @@
 import { fetchUserListings } from '../../api/listing/fetch';
 import { updateProfile } from '../../api/profile/profile';
+import { isValidImageUrl } from '../../utilities/validateImageUrl';
 
 export function renderProfile(userData) {
   if (!userData) {
@@ -35,8 +36,10 @@ export function setupProfilePictureUpdate(username) {
 
   updateButton.addEventListener('click', async () => {
     const newImageUrl = imageUrlInput.value.trim();
-    if (!newImageUrl) {
-      alert('Please enter a valid image URL.');
+    if (!newImageUrl || !isValidImageUrl(newImageUrl)) {
+      alert(
+        'Please enter a valid image URL (e.g., a public URL ending in .jpg, .png).'
+      );
       return;
     }
 
@@ -112,5 +115,20 @@ export async function renderUserListings() {
 }
 
 export async function updateProfilePicture(username, imageUrl) {
-  return await updateProfile(username, { avatar: { url: imageUrl } });
+  try {
+    const response = await updateProfile(username, {
+      avatar: { url: imageUrl },
+    });
+
+    if (!response) {
+      throw new Error(
+        'Invalid API response. Failed to update profile picture.'
+      );
+    }
+
+    return response;
+  } catch (error) {
+    console.error('Error updating profile picture:', error);
+    throw error;
+  }
 }

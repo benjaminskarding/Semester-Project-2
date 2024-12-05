@@ -31,7 +31,7 @@ export function renderListings(listings) {
   listings.forEach((listing) => {
     const { id, title, media, bids, _count, created } = listing;
     const mediaUrl =
-      media.length > 0 ? media[0].url : 'public/images/placeholderimage2.jfif';
+      media.length > 0 ? media[0].url : '/public/images/placeholderimage2.jfif';
 
     const latestBid = bids?.length > 0 ? bids[bids.length - 1].amount : '0';
 
@@ -54,7 +54,7 @@ export function renderListings(listings) {
           <div class="text-sm font-normal text-[#E4E2D7] flex items-center justify-left space-x-1">
             <span>Current Bid</span>
             <img
-              src="public/images/creditsIcon.svg"
+              src="/public/images/creditsIcon.svg"
               alt="coin icon"
               class="h-4 w-4"
             />
@@ -115,7 +115,7 @@ export async function renderSingleListingPage() {
   }
 
   imageElement.src =
-    listing.data.media?.[0]?.url || 'public/images/placeholderimage2.jfif';
+    listing.data.media?.[0]?.url || '/public/images/placeholderimage2.jfif';
   imageElement.alt = listing.data.title || 'Listing Image';
   imageElement.onerror = () => {
     imageElement.src = fallbackImage;

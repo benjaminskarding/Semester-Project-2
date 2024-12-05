@@ -87,6 +87,16 @@ export async function renderSingleListingPage() {
 
   document.title = listing.data.title || 'Listing Details';
 
+  // Set the meta description
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    const listingTitle = listing.data.title || 'This listing';
+    metaDescription.setAttribute(
+      'content',
+      `Bid on ${listingTitle} now! View bid history, check your credits, track listing expiration, and stay updated on your bid status.`
+    );
+  }
+
   const titleElement = document.querySelector('#listing-title');
   const descriptionElement = document.querySelector('#listing-description');
   const imageElement = document.querySelector('#listing-image');

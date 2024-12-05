@@ -1,26 +1,25 @@
-import { API_AUTH_REGISTER } from "../constants";
-import { publicHeaders } from "../headers";
+import { API_AUTH_REGISTER } from '../constants';
+import { publicHeaders } from '../headers';
 
 export async function registerUser(userData) {
   try {
     const response = await fetch(API_AUTH_REGISTER, {
-      method: "POST",
+      method: 'POST',
       headers: publicHeaders(),
       body: JSON.stringify(userData),
     });
 
     const data = await response.json();
-    console.log("Registration response data:", data);
 
     if (!response.ok) {
-      throw new Error(data.message || "Registration failed");
+      throw new Error(data.message || 'Registration failed');
     }
 
     return data;
   } catch (error) {
-    console.error("Error during registration:", error);
+    console.error('Error during registration:', error);
     throw new Error(
-      error.message || "Something went wrong during registration"
+      error.message || 'Something went wrong during registration'
     );
   }
 }

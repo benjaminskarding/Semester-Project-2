@@ -1,9 +1,9 @@
 export function authGuard() {
-  const token = localStorage.getItem("accessToken");
+  const token = localStorage.getItem('accessToken');
 
   if (!token) {
-    alert("You must be logged in to view this page.");
-    window.location.href = "/auth/";
+    alert('You must be logged in to view this page.');
+    window.location.href = '/auth/';
     return false;
   }
 
@@ -11,14 +11,28 @@ export function authGuard() {
 }
 
 export function getLoggedInUserName() {
-  return localStorage.getItem("name");
+  return localStorage.getItem('name');
 }
 
 export function getAccessToken() {
-  return localStorage.getItem("accessToken");
+  return localStorage.getItem('accessToken');
 }
 
 export function isLoggedIn() {
-  const token = localStorage.getItem("accessToken");
+  const token = localStorage.getItem('accessToken');
   return token !== null;
+}
+
+export function getCurrentUser() {
+  const accessToken = localStorage.getItem('accessToken');
+  const username = localStorage.getItem('username');
+
+  if (!accessToken || !username) {
+    return null;
+  }
+
+  return {
+    username,
+    accessToken,
+  };
 }

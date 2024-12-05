@@ -1,23 +1,35 @@
-import { updateHeader } from "../../utilities/conditionallyDisplay";
-import { readProfile } from "../../api/profile/read";
-import { displayUserProfile } from "../../ui/profile/update";
+import { conditionallyUpdateUI } from '../../utilities/conditionallyDisplay';
+import { fetchProfile, renderUserListings } from '../../api/profile/profile';
+import {
+  renderProfile,
+  setupProfilePictureUpdate,
+} from '../../ui/profile/update';
+import { displayCredits } from '../../utilities/displayCredits';
 
 export default async function profileView() {
-  const username = localStorage.getItem("username") || "testUser";
+  const username = localStorage.getItem('username');
 
   if (!username) {
-    console.error("No username found in localStorage.");
+    console.error('No username found in localStorage.');
     return;
   }
 
-  const userData = await readProfile(username);
+  try {
+    const profileData = await fetchProfile(username);
+    if (profileData) {
+      renderProfile(profileData);
+    } else {
+      console.error('Failed to load profile data.');
+    }
 
-  if (userData) {
-    displayUserProfile(userData);
-  } else {
-    console.error("Failed to load user profile.");
+    displayCredits('totalCredits');
+
+    setupProfilePictureUpdate(username);
+  } catch (error) {
+    console.error('Error in profileView:', error);
   }
 }
 
+conditionallyUpdateUI();
 profileView();
-updateHeader();
+renderUserListings();

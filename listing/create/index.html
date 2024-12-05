@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,90 +13,57 @@
       </a>
 
       <div class="absolute left-1/2 transform -translate-x-1/2">
-        <nav class="flex space-x-4">
-          <a
-            href="/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Listings</a
-          >
-          <a
-            href="/listing/create/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Create Listing</a
-          >
-          <a
-            href="#"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >My Bids</a
-          >
-          <a href="/profile/" class="hover:text-[#FFD700] font-medium"
-            >My Listings</a
-          >
-        </nav>
+        <nav class="flex space-x-4"></nav>
       </div>
 
       <div id="user-actions" class="flex items-center space-x-4"></div>
     </header>
 
     <main class="container mx-auto max-w-5xl p-10">
-      <h1 class="text-4xl font-bold text-center mb-6">Xin Dynasty Vase</h1>
+      <h1 class="text-4xl font-bold text-center mb-6">Create Listing</h1>
 
       <div class="flex flex-col items-center">
-        <div class="mb-8">
-          <img
-            src="../../public/images/vase.png"
-            alt="Xin Dynasty Vase"
-            class="rounded-lg max-w-sm"
+        <form
+          id="createListingForm"
+          class="flex flex-col gap-4 p-4 w-full max-w-xl"
+        >
+          <input
+            type="text"
+            id="title"
+            placeholder="Listing Title (required)"
+            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+            required
           />
-        </div>
-
-        <div class="text-center space-y-4">
-          <div class="flex justify-center space-x-8">
-            <div>
-              <p class="text-gray-400">Current Bid</p>
-              <p class="text-yellow-400 flex items-center space-x-1">
-                <img
-                  src="../../public/images/creditsIcon.svg"
-                  alt="Credits Icon"
-                  class="h-4 w-4"
-                />
-                <span>1000</span>
-              </p>
-            </div>
-            <div>
-              <p class="text-gray-400">Closing In</p>
-              <p class="font-bold">04:10:43</p>
-            </div>
-          </div>
-
-          <button
-            class="bg-yellow-400 text-black px-6 py-2 rounded-md hover:bg-yellow-500 transition"
+          <textarea
+            id="description"
+            placeholder="Listing Description (optional)"
+            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+          ></textarea>
+          <select
+            id="duration"
+            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+            required
           >
-            Make Bid
-          </button>
-        </div>
-
-        <div class="mt-6 text-center">
-          <h3 class="font-medium text-lg mb-2">Available Credits</h3>
-          <div class="flex justify-center space-x-8">
-            <div class="text-gray-400 flex items-center space-x-1">
-              <img
-                src="../../public/images/creditsIcon.svg"
-                alt="Credits Icon"
-                class="h-4 w-4"
-              />
-              <span>9500</span>
-            </div>
-            <div class="text-gray-400 flex items-center space-x-1">
-              <img
-                src="../../public/images/creditsIcon.svg"
-                alt="Credits Icon"
-                class="h-4 w-4"
-              />
-              <span>500</span>
-            </div>
-          </div>
-        </div>
+            <option value="" disabled selected>Select Duration</option>
+            <option value="1">1 Hour</option>
+            <option value="6">6 Hours</option>
+            <option value="12">12 Hours</option>
+            <option value="24">24 Hours</option>
+          </select>
+          <input
+            type="text"
+            id="mediaUrls"
+            placeholder="Media URLs (comma-separated, optional)"
+            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+          />
+          <input
+            type="text"
+            id="tags"
+            placeholder="Tags (comma-separated, optional)"
+            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+          />
+          <button type="submit">Create Listing</button>
+        </form>
       </div>
     </main>
 
@@ -155,12 +122,7 @@
               placeholder="Email address"
               class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
             />
-            <button
-              type="submit"
-              class="bg-yellow-400 text-black px-4 py-2 rounded-r-md hover:bg-yellow-500"
-            >
-              Subscribe
-            </button>
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </div>

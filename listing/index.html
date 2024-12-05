@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post Page</title>
+    <title>Listing</title>
     <script type="module" src="/src/app.js"></script>
   </head>
   <body class="bg-black text-white">
@@ -14,89 +13,79 @@
       </a>
 
       <div class="absolute left-1/2 transform -translate-x-1/2">
-        <nav class="flex space-x-4">
-          <a
-            href="/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Listings</a
-          >
-          <a
-            href="/listing/create/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Create Listing</a
-          >
-          <a
-            href="#"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >My Bids</a
-          >
-          <a href="/profile/" class="hover:text-[#FFD700] font-medium"
-            >My Listings</a
-          >
-        </nav>
+        <nav class="flex space-x-4"></nav>
       </div>
 
       <div id="user-actions" class="flex items-center space-x-4"></div>
     </header>
 
-    <main class="container mx-auto max-w-5xl p-10">
-      <h1 class="text-4xl font-bold text-center mb-6">Xin Dynasty Vase</h1>
+    <main class="container mx-auto max-w-xl p-6">
+      <h1 id="listing-title" class="text-center text-3xl font-bold my-6"></h1>
+      <p
+        id="listing-description"
+        class="text-center text-base font-normal text-[#E4E2D7] my-4"
+      ></p>
 
-      <div class="flex flex-col items-center">
-        <div class="mb-8">
-          <img
-            src="../../public/images/vase.png"
-            alt="Xin Dynasty Vase"
-            class="rounded-lg max-w-sm"
-          />
+      <div class="flex justify-center">
+        <img
+          id="listing-image"
+          src=""
+          alt="Listing Image"
+          class="rounded-lg w-full h-auto max-w-sm"
+        />
+      </div>
+
+      <div class="flex flex-col items-center mt-6 space-y-6">
+        <div class="flex justify-between items-center w-full max-w-sm">
+          <span class="text-sm font-medium">Current Bid</span>
+          <div class="flex items-center space-x-1">
+            <img
+              src="/public/images/creditsIcon.svg"
+              alt="coin icon"
+              class="h-4 w-4"
+            />
+            <span id="current-bid" class="text-sm font-normal text-[#E4E2D7]">
+            </span>
+          </div>
         </div>
 
-        <div class="text-center space-y-4">
-          <div class="flex justify-center space-x-8">
-            <div>
-              <p class="text-gray-400">Current Bid</p>
-              <p class="text-yellow-400 flex items-center space-x-1">
-                <img
-                  src="../../public/images/creditsIcon.svg"
-                  alt="Credits Icon"
-                  class="h-4 w-4"
-                />
-                <span>1000</span>
-              </p>
-            </div>
-            <div>
-              <p class="text-gray-400">Closing In</p>
-              <p class="font-bold">04:10:43</p>
-            </div>
-          </div>
-
-          <button
-            class="bg-yellow-400 text-black px-6 py-2 rounded-md hover:bg-yellow-500 transition"
-          >
-            Make Bid
-          </button>
+        <div class="flex justify-between items-center w-full max-w-sm">
+          <span class="text-sm font-medium">Closing In</span>
+          <span id="closing-in" class="text-sm font-normal text-[#E4E2D7]">
+          </span>
         </div>
-
-        <div class="mt-6 text-center">
-          <h3 class="font-medium text-lg mb-2">Available Credits</h3>
-          <div class="flex justify-center space-x-8">
-            <div class="text-gray-400 flex items-center space-x-1">
-              <img
-                src="../../public/images/creditsIcon.svg"
-                alt="Credits Icon"
-                class="h-4 w-4"
-              />
-              <span>9500</span>
-            </div>
-            <div class="text-gray-400 flex items-center space-x-1">
-              <img
-                src="../../public/images/creditsIcon.svg"
-                alt="Credits Icon"
-                class="h-4 w-4"
-              />
-              <span>500</span>
-            </div>
+        <div class="flex flex-col items-center space-y-4">
+          <div id="bidSection" class="flex flex-col items-center space-y-4">
+            <button id="bidButton">Make Bid</button>
+            <div id="bidStatus" class="mt-2 text-lg"></div>
           </div>
+        </div>
+      </div>
+
+      <div
+        class="flex justify-center items-center mt-2 max-w-sm mx-auto"
+        id="creditsBlock"
+      >
+        <div class="text-center font-medium">
+          <h3 class="text-sm mb-2">Available Credits</h3>
+          <div class="flex items-center justify-center space-x-1">
+            <img
+              src="/public/images/creditsIcon.svg"
+              alt="coin icon"
+              class="h-4 w-4"
+            />
+            <span id="availableCredits" class="text-sm text-[#E4E2D7]"> </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-6">
+        <div class="text-center">
+          <h2 class="text-lg font-medium">Bidding History:</h2>
+          <ul
+            id="previous-bids"
+            class="mt-4 space-y-2 text-sm font-normal text-[#E4E2D7]"
+          ></ul>
         </div>
       </div>
     </main>
@@ -156,12 +145,7 @@
               placeholder="Email address"
               class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
             />
-            <button
-              type="submit"
-              class="bg-yellow-400 text-black px-4 py-2 rounded-r-md hover:bg-yellow-500"
-            >
-              Subscribe
-            </button>
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,26 +14,7 @@
       </a>
 
       <div class="absolute left-1/2 transform -translate-x-1/2">
-        <nav class="flex space-x-4">
-          <a
-            href="/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Listings</a
-          >
-          <a
-            href="/listing/create/"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >Create Listing</a
-          >
-          <a
-            href="#"
-            class="hover:text-[#FFD700] font-medium border-r border-gray-500 pr-4 last:border-none"
-            >My Bids</a
-          >
-          <a href="/profile/" class="hover:text-[#FFD700] font-medium"
-            >My Listings</a
-          >
-        </nav>
+        <nav class="flex space-x-4"></nav>
       </div>
 
       <div id="user-actions" class="flex items-center space-x-4"></div>
@@ -55,14 +36,27 @@
           id="imageUrlInput"
           type="text"
           placeholder="Enter image URL"
-          class="p-2 border border-gray-300 rounded my-6"
+          class="p-2 border border-gray-300 rounded my-6 text-black"
         />
-        <button
-          id="updateButton"
-          class="text-yellow-400 hover:underline text-lg"
-        >
-          Update Profile Picture
-        </button>
+        <button id="updateButton">Update Profile Picture</button>
+        <div class="mt-6 text-center items-center">
+          <h3 class="font-medium text-lg text-gray-100">Available Credits</h3>
+          <div class="text-gray-400 flex justify-center items-center space-x-1">
+            <img
+              src="../../public/images/creditsIcon.svg"
+              alt="Credits Icon"
+              class="h-4 w-4"
+            />
+            <span id="availableCredits"></span>
+          </div>
+        </div>
+        <div id="user-listings" class="mt-8">
+          <h2 class="text-2xl font-bold text-center mb-6">Your Listings</h2>
+          <div
+            id="listings-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          ></div>
+        </div>
       </div>
     </main>
 
@@ -116,17 +110,8 @@
           <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
           <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
           <form class="flex">
-            <input
-              type="email"
-              placeholder="Email address"
-              class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
-            />
-            <button
-              type="submit"
-              class="bg-yellow-400 text-black px-4 py-2 rounded-r-md hover:bg-yellow-500"
-            >
-              Subscribe
-            </button>
+            <input type="email" placeholder="Email address" />
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </div>

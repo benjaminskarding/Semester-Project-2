@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,13 +17,11 @@
         <img src="/public/images/logo.svg" alt="Noroff Logo" class="h-10" />
       </a>
 
-      <h1 class="text-3xl font-bold text-white">Register</h1>
+      <h1 class="text-3xl font-normal text-white">Register</h1>
 
       <form name="register" class="w-full space-y-6">
         <div class="flex flex-col space-y-2">
-          <label for="name" class="text-sm font-semibold text-white"
-            >Name</label
-          >
+          <label for="name" class="text-sm font-medium text-white">Name</label>
           <input
             id="name"
             type="text"
@@ -65,13 +63,13 @@
           />
         </div>
 
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center font-medium">
           <a href="/auth/login/" class="text-[#FFD700] hover:underline"
             >Login</a
           >
           <button
             type="submit"
-            class="bg-[#FFD700] text-black font-semibold px-4 py-2 rounded-lg hover:bg-white transition duration-200"
+            class="bg-[#FFD700] text-black px-4 py-2 rounded-lg hover:bg-white transition duration-200"
           >
             Register
           </button>

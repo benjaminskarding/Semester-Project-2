@@ -1,27 +1,21 @@
-import { createPost } from "../../api/post/create";
+import { authHeaders } from '../headers';
+import { API_AUCTION_LISTINGS } from '../constants';
 
+export async function createListing(data) {
+  try {
+    const response = await fetch(API_AUCTION_LISTINGS, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify(data),
+    });
 
-export async function onCreatePost(event) {
-    event.preventDefault();
+    if (!response.ok) {
+      throw new Error(`Error creating listing: ${response.statusText}`);
+    }
 
-    const formData = new FormData(event.target);
-    const postData = {
-        title: formData.get("title"),
-        body: formData.get("body"),
-        tags: formData.get("tags") ? formData.get("tags").split(',').map(tag => tag.trim()) : [],
-        media: formData.get("media") || "",
-    };
-
-    console.log("Form data collected for the post:", postData);
-    
-    try {
-        await createPost(postData);
-        alert("Post created successfully!");
-        window.location.href = "/";
-    } catch (error) {
-        console.error("Error creating post:", error);
-        alert ("Failed to create post");
-    } 
-};
-
-
+    return await response.json();
+  } catch (error) {
+    console.error('Error in createListing:', error);
+    throw error;
+  }
+}

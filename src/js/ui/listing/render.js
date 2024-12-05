@@ -31,7 +31,7 @@ export function renderListings(listings) {
   listings.forEach((listing) => {
     const { id, title, media, bids, _count, created } = listing;
     const mediaUrl =
-      media.length > 0 ? media[0].url : '/public/images/placeholderimage2.jfif';
+      media.length > 0 ? media[0].url : '/images/placeholderimage2.jfif';
 
     const latestBid = bids?.length > 0 ? bids[bids.length - 1].amount : '0';
 
@@ -54,7 +54,7 @@ export function renderListings(listings) {
           <div class="text-sm font-normal text-[#E4E2D7] flex items-center justify-left space-x-1">
             <span>Current Bid</span>
             <img
-              src="/public/images/creditsIcon.svg"
+              src="/images/creditsIcon.svg"
               alt="coin icon"
               class="h-4 w-4"
             />
@@ -94,7 +94,7 @@ export async function renderSingleListingPage() {
   const closingInElement = document.querySelector('#closing-in');
   const previousBidsContainer = document.querySelector('#previous-bids');
   const bidButton = document.querySelector('#bidButton');
-  const fallbackImage = '/public/images/placeholderimage2.jfif';
+  const fallbackImage = '/images/placeholderimage2.jfif';
 
   titleElement.textContent = listing.data.title || 'No listing title';
 

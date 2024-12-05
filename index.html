@@ -36,65 +36,7 @@
         </section>
 
         <aside class="col-span-1 mt-12">
-          <h3 class="font-normal text-lg mb-4">Categories</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Antiques</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Collectibles</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Furniture</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Jewellery</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Art</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Decor</span>
-              </label>
-            </li>
-          </ul>
-
-          <div class="credits-section mt-6" id="credits-section">
+          <div class="credits-section" id="credits-section">
             <div class="flex justify-between">
               <h3 class="font-normal text-lg">Available Credits</h3>
             </div>
@@ -109,12 +51,59 @@
               </span>
             </div>
           </div>
-          <div class="search-field mt-6">
+          <div class="search-field mt-6 space-y-2">
+            <p class="text-lg">Search listings:</p>
             <input
               type="text"
-              placeholder="Search listings..."
+              placeholder="For example: Bjarne"
               class="w-full p-2 rounded-md bg-white text-black placeholder-gray-400 focus:outline-none"
             />
+          </div>
+          <div class="sorting-controls my-4 space-y-2">
+            <label for="sort-by" class="text-lg">Sort By:</label>
+            <div class="relative">
+              <select
+                id="sort-by"
+                class="p-2 pr-10 rounded-md bg-white text-gray-500 appearance-none w-full"
+              >
+                <option value="created_desc" class="text-gray-500">
+                  Date Created (Most Recent)
+                </option>
+                <option value="created_asc" class="text-gray-500">
+                  Date Created (Oldest)
+                </option>
+                <option value="endsAt_asc" class="text-gray-500">
+                  Ending Soonest
+                </option>
+                <option value="endsAt_desc" class="text-gray-500">
+                  Ending Latest
+                </option>
+                <option value="bids_desc" class="text-gray-500">
+                  Most Bids
+                </option>
+                <option value="bids_asc" class="text-gray-500">
+                  Fewest Bids
+                </option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-2 flex items-center pointer-events-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </aside>
       </div>

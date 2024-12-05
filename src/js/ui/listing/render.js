@@ -87,7 +87,6 @@ export async function renderSingleListingPage() {
 
   document.title = listing.data.title || 'Listing Details';
 
-  // Set the meta description
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     const listingTitle = listing.data.title || 'This listing';

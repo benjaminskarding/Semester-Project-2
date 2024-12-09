@@ -13,7 +13,7 @@ export default {
       },
       screens: {
         'header-md': '800px',
-        'aside-md': { max: '639px' },
+        'tablet-screen': { max: '640px' },
       },
     },
   },

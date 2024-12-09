@@ -31,35 +31,3 @@
     @apply hidden;
   }
 }
-
-/* Manual layout for aside on home page because i cant figure out how to do it with tailwind */
-
-.grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 1rem;
-}
-
-aside {
-  order: 2;
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  aside {
-    order: -1;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 1024px) {
-  .grid {
-    grid-template-columns: 3fr 1fr;
-  }
-
-  aside {
-    order: 2;
-  }
-}

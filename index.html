@@ -35,9 +35,10 @@
     </header>
     <main class="bg-black text-white p-4 sm:p-6 md:p-10">
       <div
-        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
+        class="max-w-7xl mx-auto grid gap-14 grid-cols-[3fr_1fr] tablet-screen:grid-cols-1 tablet-screen:gap-1"
       >
-        <section class="md:col-span-2 lg:col-span-3">
+        <!-- Main Section -->
+        <section>
           <h2 class="text-lg font-medium mb-6">Current Listings</h2>
           <div
             id="listings-container"
@@ -45,7 +46,11 @@
           ></div>
           <div id="pagination" class="mt-8 flex justify-center space-x-2"></div>
         </section>
-        <aside class="mt-8 pt-3 aside-md:mt-0">
+
+        <!-- Aside Section -->
+        <aside
+          class="mt-12 order-2 tablet-screen:order-first tablet-screen:mt-0"
+        >
           <div id="credits-section" class="mb-6">
             <div class="flex justify-between">
               <h3 class="font-normal text-lg">Available Credits</h3>
@@ -88,7 +93,7 @@
     </main>
 
     <footer class="bg-black text-white p-10">
-      <div class="container grid grid-cols-4 gap-8">
+      <div class="container grid grid-cols-4 gap-8 tablet-screen:grid-cols-1">
         <div>
           <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
           <div class="flex space-x-4 mt-4">

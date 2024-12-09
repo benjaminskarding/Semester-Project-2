@@ -11,6 +11,10 @@ export default {
       fontFamily: {
         sans: ['Raleway', 'sans-serif'],
       },
+      screens: {
+        'header-md': '800px',
+        'aside-md': { max: '639px' },
+      },
     },
   },
   plugins: [],

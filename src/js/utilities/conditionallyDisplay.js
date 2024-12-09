@@ -14,16 +14,17 @@ export function conditionallyUpdateUI() {
 
   if (isLoggedIn()) {
     userActions.innerHTML = `
-      <button id="logoutButton" class="font-normal">Logout</button>
+   <button id="logoutButton" class="font-normal">Logout</button>
       <a href="/profile/" class="flex items-center">
-        <img src="/images/user.svg" alt="Profile" class="h-6 w-6" />
+        <!-- User Icon with fixed size -->
+        <img src="/images/user.svg" alt="Profile" class="h-auto max-h-8 w-auto max-w-8" />
       </a>
     `;
 
     document.getElementById('logoutButton').addEventListener('click', onLogout);
 
     nav.innerHTML = `
-      <a
+    <a
         href="/"
         class="hover:text-[#FFD700] font-normal border-r border-gray-500 pr-4 last:border-none"
         >Listings</a

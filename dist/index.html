@@ -3,94 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to AuctionHouse, your hub for online auctions. Log in, register, explore, search, and bid on exciting listings today!"
+    />
+    <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Auksjon</title>
-    <script type="module" crossorigin src="/assets/auth-Bz6Gtv7W.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/auth-DteFRpTk.css">
+    <title>AuctionHouse</title>
+    <script type="module" crossorigin src="/assets/auth-M2L1EIyo.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/auth-ChELWF6V.css">
   </head>
 
   <body class="bg-black">
-    <header class="flex items-center justify-between p-4 px-64 text-white">
-      <a href="/" class="flex items-center">
-        <img src="/images/logo.svg" alt="Noroff Logo" class="h-10" />
+    <header
+      class="flex flex-col header-md:flex-row items-center justify-between p-4 header-md:px-4 text-white space-y-4 header-md:space-y-0"
+    >
+      <a href="/" class="flex items-center mb-4 header-md:mb-0">
+        <img
+          src="/images/logo.svg"
+          alt="Noroff Logo"
+          class="max-w-full h-auto"
+          style="max-width: 160px"
+        />
       </a>
 
-      <div class="absolute left-1/2 transform -translate-x-1/2">
-        <nav class="flex space-x-4"></nav>
+      <div class="flex justify-center w-full px-4 header-md:w-auto">
+        <nav class="flex space-x-6"></nav>
       </div>
 
-      <div id="user-actions" class="flex items-center space-x-4"></div>
+      <div id="user-actions" class="flex items-center space-x-6"></div>
     </header>
-    <main class="bg-black text-white p-10">
-      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
-        <section class="col-span-3">
+    <main class="bg-black text-white p-4 sm:p-6 md:p-10">
+      <div
+        class="max-w-7xl mx-auto grid gap-14 grid-cols-[3fr_1fr] tablet-screen:grid-cols-1 tablet-screen:gap-1"
+      >
+        <!-- Main Section -->
+        <section>
           <h2 class="text-lg font-medium mb-6">Current Listings</h2>
-          <div id="listings-container" class="grid grid-cols-4 gap-8"></div>
-
+          <div
+            id="listings-container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8"
+          ></div>
           <div id="pagination" class="mt-8 flex justify-center space-x-2"></div>
         </section>
 
-        <aside class="col-span-1 mt-12">
-          <h3 class="font-normal text-lg mb-4">Categories</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Antiques</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Collectibles</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Furniture</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Jewellery</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Art</span>
-              </label>
-            </li>
-            <li>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  class="appearance-none w-5 h-5 bg-cover bg-center rounded border border-gray-500 focus:ring focus:ring-yellow-400"
-                />
-                <span>Decor</span>
-              </label>
-            </li>
-          </ul>
-
-          <div class="credits-section mt-6" id="credits-section">
+        <!-- Aside Section -->
+        <aside
+          class="mt-12 order-2 tablet-screen:order-first tablet-screen:mt-0"
+        >
+          <div id="credits-section" class="mb-6">
             <div class="flex justify-between">
               <h3 class="font-normal text-lg">Available Credits</h3>
             </div>
@@ -105,47 +67,57 @@
               </span>
             </div>
           </div>
-          <div class="search-field mt-6">
+          <div class="search-field space-y-2">
+            <p class="text-lg">Search listings:</p>
             <input
               type="text"
-              placeholder="Search listings..."
+              placeholder="For example: Bjarne"
               class="w-full p-2 rounded-md bg-white text-black placeholder-gray-400 focus:outline-none"
             />
+          </div>
+          <div class="sorting-controls my-4 space-y-2">
+            <label for="sort-by" class="text-lg">Sort By:</label>
+            <select
+              id="sort-by"
+              class="p-2 pr-10 rounded-md bg-white text-gray-500 appearance-none w-full"
+            >
+              <option value="created_desc">Date Created (Most Recent)</option>
+              <option value="created_asc">Date Created (Oldest)</option>
+              <option value="endsAt_asc">Ending Soonest</option>
+              <option value="endsAt_desc">Ending Latest</option>
+              <option value="bids_desc">Most Bids</option>
+              <option value="bids_asc">Fewest Bids</option>
+            </select>
           </div>
         </aside>
       </div>
     </main>
+
     <footer class="bg-black text-white p-10">
-      <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+      <div class="container grid grid-cols-4 gap-8 tablet-screen:grid-cols-1">
         <div>
-          <div class="flex items-center space-x-2">
-            <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
-          </div>
+          <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
           <div class="flex space-x-4 mt-4">
-            <a href="#" class="hover:text-yellow-400">
-              <img
+            <a href="#"
+              ><img
                 src="/images/facebook.svg"
                 alt="Facebook Icon"
                 class="h-6 w-6"
-              />
-            </a>
-            <a href="#" class="hover:text-yellow-400">
-              <img
+            /></a>
+            <a href="#"
+              ><img
                 src="/images/instagram.svg"
                 alt="Instagram Icon"
                 class="h-6 w-6"
-              />
-            </a>
-            <a href="#" class="hover:text-yellow-400">
-              <img
+            /></a>
+            <a href="#"
+              ><img
                 src="/images/twitter.svg"
                 alt="Twitter Icon"
                 class="h-6 w-6"
-              />
-            </a>
+            /></a>
           </div>
         </div>
-
         <div>
           <h3 class="font-bold mb-4">About</h3>
           <ul class="space-y-2">
@@ -155,7 +127,6 @@
             <li><a href="#" class="hover:text-yellow-400">Press</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="font-bold mb-4">Support</h3>
           <ul class="space-y-2">
@@ -164,7 +135,6 @@
             <li><a href="#" class="hover:text-yellow-400">Safety Tips</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
           <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
@@ -172,7 +142,7 @@
             <input
               type="email"
               placeholder="Email address"
-              class="w-full p-2 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
+              class="w-full p-2 rounded-l-md bg-white text-black placeholder-gray-400 focus:outline-none"
             />
             <button type="submit">Subscribe</button>
           </form>

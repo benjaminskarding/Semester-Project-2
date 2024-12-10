@@ -11,31 +11,45 @@
   <body class="bg-black text-white">
     <header
       class="flex flex-col header-md:flex-row items-center justify-between p-4 header-md:px-4 text-white space-y-4 header-md:space-y-0"
+      role="banner"
     >
       <a href="/" class="flex items-center mb-4 header-md:mb-0">
         <img
           src="/images/logo.svg"
-          alt="Noroff Logo"
+          alt="Logo"
           class="max-w-full h-auto"
           style="max-width: 160px"
         />
       </a>
 
       <div class="flex justify-center w-full px-4 header-md:w-auto">
-        <nav class="flex space-x-6"></nav>
+        <nav
+          class="flex space-x-6"
+          role="navigation"
+          aria-label="Main navigation"
+        ></nav>
       </div>
 
-      <div id="user-actions" class="flex items-center space-x-6"></div>
+      <div
+        id="user-actions"
+        class="flex items-center space-x-6"
+        aria-label="User actions"
+      ></div>
     </header>
 
-    <main class="container mx-auto max-w-xl p-6">
+    <main
+      class="container mx-auto max-w-xl p-6"
+      role="main"
+      aria-labelledby="listing-title"
+    >
       <h1 id="listing-title" class="text-center text-3xl font-bold my-6"></h1>
       <p
         id="listing-description"
         class="text-center text-base font-normal text-[#E4E2D7] my-4"
+        aria-label="Listing description"
       ></p>
 
-      <div class="flex justify-center">
+      <div class="flex justify-center" aria-labelledby="listing-title">
         <img
           id="listing-image"
           src=""
@@ -45,8 +59,13 @@
       </div>
 
       <div class="flex flex-col items-center mt-6 space-y-6">
-        <div class="flex justify-between items-center w-full max-w-sm">
-          <span class="text-sm font-medium">Current Bid</span>
+        <div
+          class="flex justify-between items-center w-full max-w-sm"
+          aria-labelledby="current-bid-label"
+        >
+          <span id="current-bid-label" class="text-sm font-medium"
+            >Current Bid</span
+          >
           <div class="flex items-center space-x-1">
             <img
               src="/images/creditsIcon.svg"
@@ -58,14 +77,19 @@
           </div>
         </div>
 
-        <div class="flex justify-between items-center w-full max-w-sm">
-          <span class="text-sm font-medium">Closing In</span>
+        <div
+          class="flex justify-between items-center w-full max-w-sm"
+          aria-labelledby="closing-in-label"
+        >
+          <span id="closing-in-label" class="text-sm font-medium"
+            >Closing In</span
+          >
           <span id="closing-in" class="text-sm font-normal text-[#E4E2D7]">
           </span>
         </div>
         <div class="flex flex-col items-center space-y-4">
           <div id="bidSection" class="flex flex-col items-center space-y-4">
-            <button id="bidButton">Make Bid</button>
+            <button id="bidButton" aria-label="Make a bid">Make Bid</button>
             <div id="bidStatus" class="mt-2 text-lg"></div>
           </div>
         </div>
@@ -76,7 +100,9 @@
         id="creditsBlock"
       >
         <div class="text-center font-medium">
-          <h3 class="text-sm mb-2">Available Credits</h3>
+          <h3 class="text-sm mb-2" aria-label="Available credits">
+            Available Credits
+          </h3>
           <div class="flex items-center justify-center space-x-1">
             <img
               src="/images/creditsIcon.svg"
@@ -90,7 +116,9 @@
 
       <div class="flex justify-center mt-6">
         <div class="text-center">
-          <h2 class="text-lg font-medium">Bidding History:</h2>
+          <h2 class="text-lg font-medium" aria-label="Bidding history">
+            Bidding History:
+          </h2>
           <ul
             id="previous-bids"
             class="mt-4 space-y-2 text-sm font-normal text-[#E4E2D7]"
@@ -99,11 +127,11 @@
       </div>
     </main>
 
-    <footer class="bg-black text-white p-10">
+    <footer class="bg-black text-white p-10" role="contentinfo">
       <div class="container grid grid-cols-4 gap-8 tablet-screen:grid-cols-1">
         <div>
           <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
-          <div class="flex space-x-4 mt-4">
+          <div class="flex space-x-4 mt-4" aria-label="Social media links">
             <a href="#"
               ><img
                 src="/images/facebook.svg"
@@ -149,8 +177,11 @@
               type="email"
               placeholder="Email address"
               class="w-full p-2 rounded-l-md bg-white text-black placeholder-gray-400 focus:outline-none"
+              aria-label="Enter your email address for subscription"
             />
-            <button type="submit">Subscribe</button>
+            <button type="submit" aria-label="Subscribe to the newsletter">
+              Subscribe
+            </button>
           </form>
         </div>
       </div>

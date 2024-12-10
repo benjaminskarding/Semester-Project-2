@@ -16,14 +16,23 @@
   <body class="bg-black font-sans text-gray-800">
     <div
       class="pageContainer flex flex-col items-center justify-center min-h-screen p-6 bg-black rounded-lg shadow-lg max-w-md mx-auto space-y-8"
+      role="main"
+      aria-labelledby="register-header"
     >
       <a href="/" class="flex items-center">
-        <img src="/public/images/logo.svg" alt="Noroff Logo" class="h-10" />
+        <img src="/public/images/logo.svg" alt="Logo" class="h-10" />
       </a>
 
-      <h1 class="text-3xl font-normal text-white">Register</h1>
+      <h1 id="register-header" class="text-3xl font-normal text-white">
+        Register
+      </h1>
 
-      <form name="register" class="w-full space-y-6">
+      <form
+        name="register"
+        class="w-full space-y-6"
+        role="form"
+        aria-labelledby="register-header"
+      >
         <div class="flex flex-col space-y-2">
           <label for="name" class="text-sm font-medium text-white">Name</label>
           <input
@@ -35,6 +44,8 @@
             pattern="^[\w]+$"
             title="Please enter a username using only letters and numbers"
             class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-required="true"
+            aria-label="Enter your name"
           />
         </div>
 
@@ -50,6 +61,8 @@
             pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
             title="Please enter a valid noroff.no or stud.noroff.no address"
             class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-required="true"
+            aria-label="Enter your email address"
           />
         </div>
 
@@ -64,16 +77,22 @@
             required
             minlength="8"
             class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-required="true"
+            aria-label="Enter your password"
           />
         </div>
 
         <div class="flex justify-between items-center font-medium">
-          <a href="/auth/login/" class="text-[#FFD700] hover:underline"
+          <a
+            href="/auth/login/"
+            class="text-[#FFD700] hover:underline"
+            aria-label="Go to login page"
             >Login</a
           >
           <button
             type="submit"
             class="bg-[#FFD700] text-black px-4 py-2 rounded-lg hover:bg-white transition duration-200"
+            aria-label="Submit registration form"
           >
             Register
           </button>

@@ -44,7 +44,7 @@ export function renderListings(listings) {
           <img
             src="${mediaUrl}"
             alt="${title}"
-            class="rounded-lg w-full h-40 object-cover"
+            class="rounded-sm w-full h-80 object-cover"
           />
         </a>
         <div class="mt-2 text-left">
@@ -142,7 +142,7 @@ export async function renderSingleListingPage() {
 
   if (closingTime <= now) {
     closingInElement.textContent = 'Closed';
-    closingInElement.classList.add('text-red-500', 'font-bold');
+    closingInElement.classList.add('text-red-500');
     if (bidButton) {
       bidButton.style.display = 'none';
     }
@@ -155,7 +155,7 @@ export async function renderSingleListingPage() {
     listing.data.bids.forEach((bid) => {
       previousBidsContainer.insertAdjacentHTML(
         'beforeend',
-        `<li><span class="font-semibold">${
+        `<li><span class="font-medium">${
           bid.bidder.name || 'Anonymous'
         } :</span> ${bid.amount}</li>`
       );

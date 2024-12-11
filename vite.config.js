@@ -19,12 +19,4 @@ export default defineConfig({
       },
     },
   },
-  define: {
-    'import.meta.env.VITE_API_KEY': JSON.stringify(
-      process.env.VITE_API_KEY || ''
-    ),
-    'import.meta.env.VITE_NOROFF_API_BASE_URL': JSON.stringify(
-      process.env.VITE_NOROFF_API_BASE_URL || ''
-    ),
-  },
 });

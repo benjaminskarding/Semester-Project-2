@@ -28,7 +28,7 @@
         />
       </a>
 
-      <div class="flex justify-center w-full px-4 header-md:w-auto">
+      <div class="flex justify-center w-full header-md:w-auto">
         <nav
           class="flex space-x-6"
           role="navigation"
@@ -44,15 +44,15 @@
     </header>
     <main class="bg-black text-white p-4 sm:p-6 md:p-10" role="main">
       <div
-        class="max-w-7xl mx-auto grid gap-14 grid-cols-[3fr_1fr] tablet-screen:grid-cols-1 tablet-screen:gap-1"
+        class="mx-auto grid gap-14 grid-cols-[3fr_1fr] tablet-screen:grid-cols-1 tablet-screen:gap-1"
       >
         <section aria-labelledby="listings-header">
-          <h1 id="listings-header" class="text-lg font-medium mb-6">
+          <h1 id="listings-header" class="text-bigHeader mb-6">
             Current Listings
           </h1>
           <div
             id="listings-container"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
             role="list"
           ></div>
           <div
@@ -70,7 +70,7 @@
         >
           <div id="credits-section" class="mb-6">
             <div class="flex justify-between">
-              <h3 id="credits-section-header" class="font-normal text-lg">
+              <h3 id="credits-section-header" class="text-lg">
                 Available Credits
               </h3>
             </div>
@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class="search-field space-y-2">
-            <p class="text-lg">Search listings:</p>
+            <p class="text-lg">Search Listings:</p>
             <input
               type="text"
               placeholder="For example: Bjarne"
@@ -114,7 +114,7 @@
     </main>
 
     <footer class="bg-black text-white p-10" role="contentinfo">
-      <div class="container grid grid-cols-4 gap-8 tablet-screen:grid-cols-1">
+      <div class="w-full grid grid-cols-4 gap-8 footer-md:grid-cols-1">
         <div>
           <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
           <div class="flex space-x-4 mt-4" aria-label="Social media links">
@@ -155,7 +155,7 @@
             <li><a href="#" class="hover:text-yellow-400">Safety Tips</a></li>
           </ul>
         </div>
-        <div>
+        <div class="ml-auto">
           <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
           <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
           <form class="flex">

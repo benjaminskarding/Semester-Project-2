@@ -14,7 +14,7 @@ export function conditionallyUpdateUI() {
 
   if (isLoggedIn()) {
     userActions.innerHTML = `
-   <button id="logoutButton" class="font-normal">Logout</button>
+   <button id="logoutButton">Logout</button>
       <a href="/profile/" class="flex items-center">
         <!-- User Icon with fixed size -->
         <img src="/images/user.svg" alt="Profile" class="h-auto max-h-8 w-auto max-w-8" />
@@ -26,24 +26,24 @@ export function conditionallyUpdateUI() {
     nav.innerHTML = `
     <a
         href="/"
-        class="hover:text-[#FFD700] font-normal border-r border-gray-500 pr-4 last:border-none"
+        class="hover:text-[#FFD700] border-r border-gray-500 pr-4 last:border-none"
         >Listings</a
       >
       <a
         href="/listing/create/"
-        class="hover:text-[#FFD700] font-normal border-r border-gray-500 pr-4 last:border-none"
+        class="hover:text-[#FFD700] border-r border-gray-500 pr-4 last:border-none"
         >Create Listing</a
       >
       <a
         href="/profile/"
-        class="hover:text-[#FFD700] font-normal"
+        class="hover:text-[#FFD700]"
         >My Listings</a
       >
     `;
   } else {
     userActions.innerHTML = `
-      <a href="/auth/register/" class="hover:text-[#FFD700] font-normal">Register</a>
-      <a href="/auth/login/" class="hover:text-[#FFD700] font-normal">Log In</a>
+      <a href="/auth/register/" class="hover:text-[#FFD700]">Register</a>
+      <a href="/auth/login/" class="hover:text-[#FFD700]">Log In</a>
     `;
 
     nav.innerHTML = '';

@@ -95,11 +95,11 @@ export async function renderUserListings() {
       const formattedEndsAt = new Date(endsAt).toLocaleDateString();
 
       const listingHTML = `
-        <div class="border border-gray-700 rounded p-4">
+        <div class="rounded">
           <a href="/listing/?id=${id}" class="block">
             <img src="${mediaUrl}" alt="${title}" class="w-full h-40 object-cover rounded mb-4">
           </a>
-          <h3 class="font-bold text-lg mb-2">${title}</h3>
+          <h4 class="font-medium text-md mb-2">${title}</h4>
           <p class="text-sm text-gray-400 mb-2">${
             description || 'No description provided.'
           }</p>

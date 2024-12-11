@@ -18,7 +18,7 @@
           src="/images/logo.svg"
           alt="Logo"
           class="max-w-full h-auto"
-          style="max-width: 160px"
+          style="max-width: 200px"
         />
       </a>
 
@@ -38,14 +38,17 @@
     </header>
 
     <main
-      class="container mx-auto max-w-xl p-6"
+      class="container mx-auto max-w-xl p-4 sm:p-6 md:p-10"
       role="main"
       aria-labelledby="listing-title"
     >
-      <h1 id="listing-title" class="text-center text-3xl font-bold my-6"></h1>
+      <h1
+        id="listing-title"
+        class="text-center text-pageTitle my-6 truncate"
+      ></h1>
       <p
         id="listing-description"
-        class="text-center text-base font-normal text-[#E4E2D7] my-4"
+        class="text-center text-base font-normal text-[#E4E2D7] my-4 truncate"
         aria-label="Listing description"
       ></p>
 
@@ -63,17 +66,16 @@
           class="flex justify-between items-center w-full max-w-sm"
           aria-labelledby="current-bid-label"
         >
-          <span id="current-bid-label" class="text-sm font-medium"
-            >Current Bid</span
-          >
+          <h2 id="current-bid-label" class="text-sm font-medium">
+            Current Bid
+          </h2>
           <div class="flex items-center space-x-1">
             <img
               src="/images/creditsIcon.svg"
               alt="coin icon"
               class="h-4 w-4"
             />
-            <span id="current-bid" class="text-sm font-normal text-[#E4E2D7]">
-            </span>
+            <span id="current-bid" class="text-sm text-[#E4E2D7]"> </span>
           </div>
         </div>
 
@@ -81,11 +83,8 @@
           class="flex justify-between items-center w-full max-w-sm"
           aria-labelledby="closing-in-label"
         >
-          <span id="closing-in-label" class="text-sm font-medium"
-            >Closing In</span
-          >
-          <span id="closing-in" class="text-sm font-normal text-[#E4E2D7]">
-          </span>
+          <h3 id="closing-in-label" class="text-sm font-medium">Closing In</h3>
+          <span id="closing-in" class="text-sm text-[#E4E2D7]"> </span>
         </div>
         <div class="flex flex-col items-center space-y-4">
           <div id="bidSection" class="flex flex-col items-center space-y-4">
@@ -100,25 +99,26 @@
         id="creditsBlock"
       >
         <div class="text-center font-medium">
-          <h3 class="text-sm mb-2" aria-label="Available credits">
-            Available Credits
-          </h3>
+          <h4 class="mb-2" aria-label="Available credits">Available Credits</h4>
           <div class="flex items-center justify-center space-x-1">
             <img
               src="/images/creditsIcon.svg"
               alt="coin icon"
               class="h-4 w-4"
             />
-            <span id="availableCredits" class="text-sm text-[#E4E2D7]"> </span>
+            <span
+              id="availableCredits"
+              aria-label="Available credits amount"
+              class="text-[#E4E2D7]"
+            >
+            </span>
           </div>
         </div>
       </div>
 
       <div class="flex justify-center mt-6">
         <div class="text-center">
-          <h2 class="text-lg font-medium" aria-label="Bidding history">
-            Bidding History:
-          </h2>
+          <h5 aria-label="Bidding history">Bidding History:</h5>
           <ul
             id="previous-bids"
             class="mt-4 space-y-2 text-sm font-normal text-[#E4E2D7]"
@@ -128,7 +128,7 @@
     </main>
 
     <footer class="bg-black text-white p-10" role="contentinfo">
-      <div class="container grid grid-cols-4 gap-8 tablet-screen:grid-cols-1">
+      <div class="w-full grid grid-cols-4 gap-8 footer-md:grid-cols-1">
         <div>
           <img src="/images/logo.svg" alt="AuctionHouse Logo" class="h-8" />
           <div class="flex space-x-4 mt-4" aria-label="Social media links">
@@ -169,7 +169,7 @@
             <li><a href="#" class="hover:text-yellow-400">Safety Tips</a></li>
           </ul>
         </div>
-        <div>
+        <div class="ml-auto">
           <h3 class="font-bold mb-2">Subscribe to our newsletter</h3>
           <p class="text-gray-400 mb-4">Stay updated on the latest auctions!</p>
           <form class="flex">
@@ -177,11 +177,9 @@
               type="email"
               placeholder="Email address"
               class="w-full p-2 rounded-l-md bg-white text-black placeholder-gray-400 focus:outline-none"
-              aria-label="Enter your email address for subscription"
+              aria-label="Email address"
             />
-            <button type="submit" aria-label="Subscribe to the newsletter">
-              Subscribe
-            </button>
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </div>

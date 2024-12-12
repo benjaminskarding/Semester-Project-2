@@ -30,7 +30,6 @@ export function setupCreateListing() {
     mediaInputCount++;
   });
 
-  // Handle form submission
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -43,7 +42,7 @@ export function setupCreateListing() {
       .map((tag) => tag.trim())
       .filter((tag) => tag);
 
-    // Collect all media inputs dynamically
+    // Collect all media inputs
     const mediaUrls = Array.from(
       document.querySelectorAll('input[name="media-urls"]')
     )

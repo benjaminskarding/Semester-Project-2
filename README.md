@@ -1,5 +1,13 @@
 ﻿# Semester-Project-2
 
+## Description
+It's an auction house for selling various digital items. 
+
+E.G: Skins, other types of loot from online games.
+
+Target audience is gamers 18 - 40 years old.
+
+
 ## Table of Contents
 
 - [Environment Variables](#environment-variables)

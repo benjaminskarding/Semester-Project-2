@@ -35,7 +35,7 @@ export function setupCreateListing() {
 
     const title = document.getElementById('title').value.trim();
     const description = document.getElementById('description').value.trim();
-    const duration = parseInt(document.getElementById('duration').value, 10);
+    const endDateTime = document.getElementById('endDateTime').value.trim();
     const tags = document
       .getElementById('tags')
       .value.split(',')
@@ -50,8 +50,8 @@ export function setupCreateListing() {
       .filter((media) => media.url);
 
     // Validate fields
-    if (!title || !duration || isNaN(duration) || duration <= 0) {
-      alert('Please provide a valid title and duration (in hours).');
+    if (!title || !endDateTime) {
+      alert('Please provide a valid title and end date/time.');
       return;
     }
 
@@ -60,12 +60,14 @@ export function setupCreateListing() {
       return;
     }
 
-    // Construct listing data
-    const now = new Date();
-    const endsAt = new Date(
-      now.getTime() + duration * 60 * 60 * 1000
-    ).toISOString();
+    const endsAt = new Date(endDateTime).toISOString();
 
+    if (new Date(endsAt) <= new Date()) {
+      alert('End date/time must be in the future.');
+      return;
+    }
+
+    // Construct listing data
     const listingData = {
       title,
       description,

@@ -153,10 +153,13 @@ export async function renderSingleListingPage() {
   }
 
   // Set current bid
-  const latestBid =
-    listing.data.bids?.length > 0
-      ? listing.data.bids[listing.data.bids.length - 1].amount
-      : '0';
+  let latestBid = '0';
+  if (listing.data.bids?.length > 0) {
+    const sortedBids = [...listing.data.bids].sort(
+      (a, b) => b.amount - a.amount
+    );
+    latestBid = sortedBids[0].amount;
+  }
   currentBidElement.textContent = latestBid;
 
   // Countdown timer
@@ -173,9 +176,14 @@ export async function renderSingleListingPage() {
     startCountdown(closingTime, 'closing-in', 'bidButton');
   }
 
+  // Display sorted bidding history
   previousBidsContainer.innerHTML = '';
   if (listing.data.bids?.length > 0) {
-    listing.data.bids.forEach((bid) => {
+    const sortedBids = [...listing.data.bids].sort(
+      (a, b) => b.amount - a.amount
+    );
+
+    sortedBids.forEach((bid) => {
       previousBidsContainer.insertAdjacentHTML(
         'beforeend',
         `<li><span class="font-medium">${

@@ -69,19 +69,14 @@
             aria-label="Enter a description for your listing"
           ></textarea>
 
-          <select
-            id="duration"
+          <input
+            type="datetime-local"
+            id="endDateTime"
             class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
             required
             aria-required="true"
-            aria-label="Select the auction duration"
-          >
-            <option value="" disabled selected>Select Duration</option>
-            <option value="1">1 Hour</option>
-            <option value="6">6 Hours</option>
-            <option value="12">12 Hours</option>
-            <option value="24">24 Hours</option>
-          </select>
+            aria-label="Select the auction end date and time"
+          />
 
           <div id="mediaInputs" class="flex flex-col gap-2">
             <label for="media-url-0" class="sr-only">Media URL</label>

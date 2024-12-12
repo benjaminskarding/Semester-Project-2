@@ -52,6 +52,7 @@
           role="form"
           aria-labelledby="create-listing-header"
         >
+          <!-- Title Input -->
           <input
             type="text"
             id="title"
@@ -61,12 +62,16 @@
             aria-required="true"
             aria-label="Enter the title for your listing"
           />
+
+          <!-- Description Input -->
           <textarea
             id="description"
             placeholder="Listing Description (optional)"
             class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
             aria-label="Enter a description for your listing"
           ></textarea>
+
+          <!-- Duration Input -->
           <select
             id="duration"
             class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
@@ -80,13 +85,30 @@
             <option value="12">12 Hours</option>
             <option value="24">24 Hours</option>
           </select>
-          <input
-            type="text"
-            id="mediaUrls"
-            placeholder="Media URLs (comma-separated, optional)"
-            class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
-            aria-label="Enter media URLs for your listing"
-          />
+
+          <!-- Dynamic Media URLs -->
+          <div id="mediaInputs" class="flex flex-col gap-2">
+            <label for="media-url-0" class="sr-only">Media URL</label>
+            <input
+              type="url"
+              id="media-url-0"
+              name="media-urls"
+              placeholder="Media URL (required)"
+              class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
+              aria-label="Enter a media URL for your listing"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            id="addMediaButton"
+            class="text-sm bg-yellow-500 text-black py-1 px-3 rounded hover:bg-yellow-400 transition duration-200"
+            aria-label="Add another media URL field"
+          >
+            + Add Media
+          </button>
+
+          <!-- Tags Input -->
           <input
             type="text"
             id="tags"
@@ -94,6 +116,8 @@
             class="p-2 border border-gray-300 rounded placeholder-black text-black w-full"
             aria-label="Enter tags for your listing"
           />
+
+          <!-- Submit Button -->
           <button
             type="submit"
             class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-400 transition duration-200"

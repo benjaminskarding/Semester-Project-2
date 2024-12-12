@@ -103,6 +103,8 @@ export async function renderSingleListingPage() {
   const closingInElement = document.querySelector('#closing-in');
   const previousBidsContainer = document.querySelector('#previous-bids');
   const bidButton = document.querySelector('#bidButton');
+  const prevButton = document.querySelector('#prevImage');
+  const nextButton = document.querySelector('#nextImage');
   const fallbackImage = '/images/placeholderimage2.jfif';
 
   titleElement.textContent = listing.data.title || 'No listing title';
@@ -123,20 +125,41 @@ export async function renderSingleListingPage() {
     descriptionElement.textContent = 'No description provided.';
   }
 
-  imageElement.src =
-    listing.data.media?.[0]?.url || '/images/placeholderimage2.jfif';
-  imageElement.alt = listing.data.title || 'Listing Image';
-  imageElement.onerror = () => {
-    imageElement.src = fallbackImage;
-  };
+  // Image navigation
+  const media = listing.data.media || [];
+  let currentImageIndex = 0;
 
+  const updateImage = () => {
+    if (media.length > 0) {
+      imageElement.src = media[currentImageIndex]?.url || fallbackImage;
+      imageElement.alt = media[currentImageIndex]?.alt || 'Listing Image';
+    } else {
+      imageElement.src = fallbackImage;
+      imageElement.alt = 'No images available';
+    }
+  };
+  updateImage();
+
+  if (media.length > 1) {
+    prevButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + media.length) % media.length;
+      updateImage();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % media.length;
+      updateImage();
+    });
+  }
+
+  // Set current bid
   const latestBid =
     listing.data.bids?.length > 0
       ? listing.data.bids[listing.data.bids.length - 1].amount
       : '0';
-
   currentBidElement.textContent = latestBid;
 
+  // Countdown timer
   const now = new Date();
   const closingTime = new Date(listing.data.endsAt);
 

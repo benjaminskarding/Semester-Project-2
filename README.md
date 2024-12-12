@@ -1,5 +1,9 @@
 ﻿# Semester-Project-2
 
+## Description
+It's an auction house.
+
+
 ## Table of Contents
 
 - [Environment Variables](#environment-variables)

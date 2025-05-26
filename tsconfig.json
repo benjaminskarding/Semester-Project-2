@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Core compile targets */
+    "target": "ES2020", // modern syntax output
+    "module": "ESNext", // native ESM for Vite/modern bundlers
+    "jsx": "react-jsx", // React 17+ automatic JSX transform
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+
+    /* Migration-friendly flags */
+    "allowJs": true, // include .js/.jsx in type-checking
+    "noEmit": true, // only check types, don’t write .js files
+    "skipLibCheck": true, // speed: skip *.d.ts files shipped with libs
+
+    /* Module resolution & interop */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Strictness */
+    "strict": true // enables all strict-type-checking options
+  },
+
+  /* Project file globs */
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

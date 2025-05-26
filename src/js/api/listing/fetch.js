@@ -1,26 +1,16 @@
 import { API_AUCTION_LISTINGS, API_AUCTION_PROFILES } from '../constants';
 import { publicHeaders, authHeaders } from '../headers';
+import { cachedFetch } from '../../utilities/cachedFetch';
 
 export async function fetchListings(limit = 12, page = 1) {
   try {
-    const url = `${API_AUCTION_LISTINGS}?_bids=true&limit=${limit}&page=${page}&nocache=${new Date().getTime()}`;
+    const url = `${API_AUCTION_LISTINGS}?_bids=true&limit=${limit}&page=${page}`;
 
-    const response = await fetch(url, {
+    // one-liner cache wrapper
+    const data = await cachedFetch(url, {
       method: 'GET',
       headers: publicHeaders(),
     });
-
-    if (!response.ok) {
-      const errorBody = await response.text();
-      console.error(
-        `Failed to fetch listings: ${response.status} ${response.statusText}, body: ${errorBody}`
-      );
-      throw new Error(
-        `Failed to fetch listings: ${response.statusText || response.status}`
-      );
-    }
-
-    const data = await response.json();
 
     const sortedListings = data.data.sort(
       (a, b) => new Date(b.created) - new Date(a.created)
@@ -71,7 +61,10 @@ export async function fetchUserListings(username) {
 
 export async function fetchFilteredListings(query) {
   try {
-    const url = `${API_AUCTION_LISTINGS}/search?q=${encodeURIComponent(query)}&_bids=true`;
+    const url = `${API_AUCTION_LISTINGS}/search?q=${encodeURIComponent(
+      query
+    )}&_bids=true`;
+
     const response = await fetch(url, {
       method: 'GET',
       headers: publicHeaders(),
